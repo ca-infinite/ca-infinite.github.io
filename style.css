@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+  }
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, sans-serif;
+    background-color:#3c3c3c;
+    color:#ffffff;
+  }
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease; /* Fade transition */
+}
+
+.slides img.show {
+    position: static;
+    opacity: 1; /* Fully visible */
+}
+
+.button {
+    display: inline-block;
+    padding: 0.1em 1em;
+    margin: 0;
+    /*background-color: #524582;*/
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    /*border: 1em solid #524582;*/
+    border-radius: 0em;
+    cursor: pointer;
+    /*transition: background-color 0.3s;*/
+    margin-left: auto;
+    height: 100%;
+    font-size: 1.48em;
+    min-width: 100px; /* Ensure minimum width */
+    
+    /*font-family: "Qwitcher Grypen", cursive;
+    font-weight: 700;
+    font-style: normal; 
+    font-size: 2em;*/
+  }
+  
+  .button:hover {
+    color: #818181;
+    /*background-color: #0056b3;*/
+    /*box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 100);*/
+  }
+.ig{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.48em;
+    
+}
+.brand,.logo {
+    margin-right: auto; /* To stick to the left */
+    margin-left: 0em;
+}
+
+.top{
+    overflow: hidden;
+    display: flex;
+    
+}
+header{
+    position: relative;
+    display: flex;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+    /*background-color: #2f3746;*/
+    margin-bottom: -5em;
+    justify-content:flex-end;
+    align-items: center;
+    z-index: 1;
+}
+
+
+article h3{
+    text-align: center;
+    font-size: 3em;
+    margin: 1em;
+}
+article p{
+    font-size: 2em;
+    text-align: center;
+    margin: 1em;
+}
+#firstPIC{
+    float: right;
+    width: 25em;
+    height: auto;
+    clear: both;
+    margin: 1em;
+
+}
+#secondPIC{
+    float: left;
+    width: 25em;
+    height: auto;
+    clear: both;
+    margin: 1em;
+
+}
+
+article::after {
+    content: "";
+    display: table;
+    clear: both; /* Ensures the article contains floated elements */
+}
+footer{
+    display: flex;
+    background-color: #2f3746;
+    font-family: "Qwitcher Grypen", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+}
+footer h3{
+    color: #ffffff;
+}
+footer a {
+    margin: 0 0.5em; /* Add margin for spacing */
+}
+header img {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    
+    /*margin-right: auto; /* To stick to the left */
+   
+}
+h2{
+    text-align: center;
+    /*font-family: "Qwitcher Grypen", cursive;
+    font-weight: 700;
+    font-style: normal;*/
+    font-family: Impact;
+    font-size: 6em;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    height: 20%;
+}
+h1{
+    color: #fff;
+    font-family: 'Times New Roman Italic', serif;
+}
+
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+  @media only screen and (max-width: 700px) {
+    /* For mobile phones: */
+
+    #firstPIC, #secondPIC {
+        display: block; /* Make the image a block-level element */
+        float: none;
+        width: 70%;
+        margin: 0.5em 2em;
+      }
+      .animate{
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Arrange items in a column */
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .button, .brand {
+        font-size: 1em; /* Smaller font size */
+        /*padding: 0.5em 1em; /* Adjust padding */
+    }
+    .logo{
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+    }
+    h2{
+        text-align: center;
+        font-family: Impact;
+        font-size: 5em;
+    }
+  }
+  @media only screen and (min-width: 701px) and (max-width: 780px) {
+   
+    #firstPIC, #secondPIC {
+        display: block; /* Make the image a block-level element */
+        float: none;
+        width: 70%;
+        margin: 1em 3em;
+      }
+    .animate{
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Arrange items in a column */
+        align-items: center;
+        justify-content: center;
+    }
+    
+  }

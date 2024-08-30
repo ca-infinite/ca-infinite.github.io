@@ -191,7 +191,7 @@ h1{
     #firstPIC, #secondPIC {
         display: block;
         float: none;
-        width: 60%;
+        width: 65%;
         margin: 0.3em 1.5em;
       }
       .animate{
@@ -202,7 +202,7 @@ h1{
     }
     
     .button, .brand {
-        font-size: 0.5em; 
+        font-size: 0.7em; 
     }
     .logo{
         width: 1em;

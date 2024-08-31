@@ -122,8 +122,23 @@ const onTouchStart = (event) => {
     previousMousePosition = { x: touch.clientX, y: touch.clientY };
 };
 
-const onTouchEnd = () => {
+
+const onTouchEnd = (event) => {
     isDragging = false;
+    
+    // Call the click logic on touch end
+    const touch = event.changedTouches[0];
+    mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    const intersects = raycaster.intersectObject(cone);
+    if (intersects.length > 0) {
+        const faceIndex = Math.floor(intersects[0].faceIndex / 2);
+        const urls = ['nature.html', 'city.html', 'disney.html', 'index.html', 'animal.html', 'car.html'];
+        window.location.href = urls[faceIndex];
+    }
 };
 
 const onTouchMove = (event) => {

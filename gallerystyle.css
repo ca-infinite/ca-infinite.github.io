@@ -116,7 +116,21 @@ canvas{
     opacity: 1; 
     pointer-events: auto; 
 }
-@media only screen and (max-width: 700px) {
+
+@media only screen and (max-width: 600px) {
+    
+    .button, .brand {
+        font-size: 0.5em; 
+    }
+    .logo{
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+    }
+
+    
+  }
+@media only screen and (min-width: 601px) and (max-width: 700px) {
     
     .button, .brand {
         font-size: 1em; 

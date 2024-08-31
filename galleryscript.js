@@ -126,7 +126,7 @@ const onTouchStart = (event) => {
 const onTouchEnd = (event) => {
     isDragging = false;
     
-    // Call the click logic on touch end
+    
     const touch = event.changedTouches[0];
     mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1;

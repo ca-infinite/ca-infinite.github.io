@@ -112,6 +112,39 @@ window.addEventListener('click', (event) => {
     }
 });
 
+
+
+
+
+const onTouchStart = (event) => {
+    isDragging = true;
+    const touch = event.touches[0];
+    previousMousePosition = { x: touch.clientX, y: touch.clientY };
+};
+
+const onTouchEnd = () => {
+    isDragging = false;
+};
+
+const onTouchMove = (event) => {
+    if (!isDragging) return;
+
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - previousMousePosition.x;
+    const deltaY = touch.clientY - previousMousePosition.y;
+
+    cone.rotation.y += deltaX * 0.01;
+    cone.rotation.x += deltaY * 0.01;
+
+    previousMousePosition = { x: touch.clientX, y: touch.clientY };
+};
+
+window.addEventListener('touchstart', onTouchStart);
+window.addEventListener('touchend', onTouchEnd);
+window.addEventListener('touchmove', onTouchMove);
+
+
+
 const animate = () => {
     renderer.render(scene, camera);
     cone.rotation.y+=0.003;
